@@ -23,6 +23,7 @@ export const ME = 'Me';
 export const LOGIN = 'Login';
 export const REGISTER = 'Register';
 export const LOGOUT = 'Logout';
+export const BOTTOM_TAB_NAVIGATOR = 'Bottom Tab Navigator';
 
 /**
  * Message screens

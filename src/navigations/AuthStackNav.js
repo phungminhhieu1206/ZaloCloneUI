@@ -5,13 +5,13 @@ import LoginScreen from '../screens/authentication/LoginScreen';
 import RegisterScreen from '../screens/authentication/RegisterScreen';
 import colors from '../assets/themes/colors';
 
-const AuthStack = createStackNavigator();
+const Stack = createStackNavigator();
 
-const AuthNavigator = () => {
+const AuthStackNav = () => {
   return (
-    <AuthStack.Navigator screenOptions={{headerShown: false}}>
-      <AuthStack.Screen name={LOGIN} component={LoginScreen} />
-      <AuthStack.Screen
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name={LOGIN} component={LoginScreen} />
+      <Stack.Screen
         name={REGISTER}
         component={RegisterScreen}
         options={{
@@ -23,8 +23,8 @@ const AuthNavigator = () => {
           headerShadowVisible: true, // ẩn(hiện) border button header
         }}
       />
-    </AuthStack.Navigator>
+    </Stack.Navigator>
   );
 };
 
-export default AuthNavigator;
+export default AuthStackNav;

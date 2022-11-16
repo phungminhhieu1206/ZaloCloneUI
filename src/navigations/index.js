@@ -1,14 +1,16 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import AuthNavigator from './AuthNavigator';
+import AuthStackNav from './AuthStackNav';
 import {navigationRef} from './RootNavigator';
+import BottomTabNav from './BottomTabNav';
 
 const AppNavContainer = () => {
-  const isAuthenticated = false;
+  const isAuthenticated = true;
 
   return (
     <NavigationContainer ref={navigationRef}>
-      <AuthNavigator />
+      {/* <AuthStackNav /> */}
+      {isAuthenticated ? <BottomTabNav /> : <AuthStackNav />}
     </NavigationContainer>
   );
 };
