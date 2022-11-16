@@ -1,5 +1,5 @@
 import colors from '../../../assets/themes/colors';
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   headerLeft: {
@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     color: colors.white,
     textAlignVertical: 'center',
     fontSize: 16,
+    paddingTop: Platform.OS === 'ios' ? 12 : 0,
   },
 });
 
