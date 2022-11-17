@@ -20,6 +20,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     paddingTop: Platform.OS === 'ios' ? 12 : 0,
   },
+  root: {
+    backgroundColor: colors.background,
+  },
+  text: {
+    fontSize: 40,
+    fontWeight: 'bold',
+    padding: 20,
+    marginBottom: 20,
+  },
 });
 
 export default styles;

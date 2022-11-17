@@ -1,13 +1,24 @@
+import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
 import colors from '../assets/themes/colors';
 import {MY_CHANNEL, SETTINGS} from '../constants/routeNames';
 import MyChannelScreen from '../screens/channel/MyChannelScreen';
 import SettingScreen from '../screens/channel/SettingScreen';
 
 const Stack = createStackNavigator();
+const tabHiddenRoutes = [SETTINGS];
 
-const ChannelStack = () => {
+const ChannelStack = ({navigation, route}) => {
+  // Hidden tab-bar when route special screen
+  useLayoutEffect(() => {
+    if (tabHiddenRoutes.includes(getFocusedRouteNameFromRoute(route))) {
+      navigation.setOptions({tabBarStyle: {display: 'none'}});
+    } else {
+      navigation.setOptions({tabBarStyle: {display: 'flex'}});
+    }
+  }, [navigation, route]);
+
   return (
     <Stack.Navigator>
       <Stack.Screen

@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import {View, Text, TouchableOpacity, Platform, StatusBar} from 'react-native';
-import React, {useEffect} from 'react';
+import {View, Text, TouchableOpacity, Platform, StatusBar, ScrollView} from 'react-native';
+import React, {useEffect, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import colors from '../../../assets/themes/colors';
 import styles from './styles';
@@ -66,10 +66,22 @@ const MyChannelScreen = () => {
   }, []);
 
   return (
-    <View>
+    <ScrollView
+      style={styles.root}
+      scrollEventThrottle={0} // for iOS
+    >
       {Platform.OS === 'android' && <StatusBar animated={true} backgroundColor={colors.primary} />}
-      <Text>MyChannelScreen</Text>
-    </View>
+      <Text style={styles.text}>MyChannelScreen</Text>
+      <Text style={styles.text}>MyChannelScreen</Text>
+      <Text style={styles.text}>MyChannelScreen</Text>
+      <Text style={styles.text}>MyChannelScreen</Text>
+      <Text style={styles.text}>MyChannelScreen</Text>
+      <Text style={styles.text}>MyChannelScreen</Text>
+      <Text style={styles.text}>MyChannelScreen</Text>
+      <Text style={styles.text}>MyChannelScreen</Text>
+      <Text style={styles.text}>MyChannelScreen</Text>
+      <Text style={styles.text}>MyChannelScreen</Text>
+    </ScrollView>
   );
 };
 
